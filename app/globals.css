@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+
+  html {
+    @apply bg-background text-text-primary font-sans;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-background text-text-primary;
+    min-height: 100dvh;
+  }
+
+  h1, h2, h3 {
+    @apply font-serif;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #2a2a3a;
+    border-radius: 2px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3a3a4a;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-surface border border-border rounded-xl p-4;
+  }
+
+  .btn-primary {
+    @apply bg-accent text-background font-medium px-4 py-2 rounded-lg hover:bg-amber-400 transition-colors text-sm;
+  }
+
+  .btn-ghost {
+    @apply text-text-muted hover:text-text-primary hover:bg-surface px-3 py-2 rounded-lg transition-colors text-sm;
+  }
+
+  .input-base {
+    @apply bg-background border border-border rounded-lg px-3 py-2 text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent text-sm w-full transition-colors;
+  }
+
+  .label {
+    @apply text-xs text-text-muted uppercase tracking-wider mb-1 block;
+  }
+
+  .badge {
+    @apply text-xs px-2 py-0.5 rounded-full font-medium;
+  }
+
+  .status-on_track {
+    @apply bg-success/20 text-success;
+  }
+  .status-slipping {
+    @apply bg-warning/20 text-warning;
+  }
+  .status-blocked {
+    @apply bg-danger/20 text-danger;
+  }
+  .status-complete {
+    @apply bg-blue-500/20 text-blue-400;
+  }
+
+  .page-title {
+    @apply text-2xl font-serif text-text-primary mb-1;
+  }
+
+  .section-title {
+    @apply text-sm text-text-muted uppercase tracking-wider font-sans font-medium;
+  }
+
+  .nav-link {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-primary hover:bg-surface transition-all text-sm;
+  }
+
+  .nav-link-active {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-lg text-accent bg-accent/10 text-sm font-medium;
+  }
+
+  .progress-bar {
+    @apply h-1.5 bg-border rounded-full overflow-hidden;
+  }
+
+  .progress-fill {
+    @apply h-full rounded-full transition-all duration-500;
+  }
+}
